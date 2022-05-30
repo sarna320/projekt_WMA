@@ -187,7 +187,7 @@ def licz(obraz,obraz_zloty,obraz_srebny):
 
     return obraz,suma
 "---------------------------------------------------------------------------------------------------------------------"
-#glowna petla
+#glowna petla programu
 for i in range(3):
     obraz=zwrocObrazGithub(i)
     drukujObraz("oryginalny",obraz)
