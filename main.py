@@ -21,7 +21,7 @@ def zwrocObrazGithub(i):
     obraz = cv2.pyrDown(obraz)
 
     return obraz
-
+"---------------------------------------------------------------------------------------------------------------------"
 #funckja do drukowania obrazu
 #argumentem wejsciowym jest nazwa okna i obraz do pokazania
 def drukujObraz(nazwa,obraz):
@@ -29,7 +29,7 @@ def drukujObraz(nazwa,obraz):
     cv2.imshow(nazwa, obraz)
     cv2.waitKey()
     cv2.destroyAllWindows()
-
+"---------------------------------------------------------------------------------------------------------------------"
 #funckja zwraca obraz z wszystkimi wykrytymi nominalami na zdjecie, gdzie tlo zamieniane jest na czarny kolor
 #argumentem wejsciowym jest obraz z monetami
 def wszyskieNominaly(obraz):
@@ -53,7 +53,7 @@ def wszyskieNominaly(obraz):
     # przemaskowanie
     obraz[mask!=255]=0
     return obraz
-
+"---------------------------------------------------------------------------------------------------------------------"
 #funkcja zwraca 2 obrazy: 1-zlote monety, 2-srebne monety. Oba na czarnym tle
 #argumentem wejsciowym jest obraz z monetami gdzie tlo czarne
 def rodziel(obraz):
@@ -88,7 +88,7 @@ def rodziel(obraz):
             obraz = cv2.circle(obraz, (i[0], i[1]), 46, 0, -1)
 
     return obraz_zloty, obraz
-
+"---------------------------------------------------------------------------------------------------------------------"
 #funkcja zwraca obraz z wykrytymi nominalami i sume nominalow wszystkich monet
 #argumentem wejsciowym jest obraz z oryginalny, obraz z zlotymi monetami i obraz z srebnymi monetami na czarnym tle
 def licz(obraz,obraz_zloty,obraz_srebny):
@@ -202,7 +202,7 @@ for i in range(3):
     obraz_wykryty,suma=licz(obraz.copy(),obraz_zloty.copy(),obraz_srebny.copy())
     drukujObraz("wykryte nominaly",obraz_wykryty)
     print(suma)
-
+"---------------------------------------------------------------------------------------------------------------------"
 
 
 
